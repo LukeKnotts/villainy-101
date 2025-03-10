@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://s2uxi71u65kb"]
+
+[ext_resource type="Script" uid="uid://dqrdtquu3mkc4" path="res://Scripts/menu.gd" id="1_1rerr"]
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource("1_1rerr")
+
+[node name="CenterBox" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -403.0
+offset_top = -52.0
+offset_right = 403.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Load" type="Button" parent="CenterBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "Load"
+
+[node name="Slot1" type="Button" parent="CenterBox"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Slot 1"
+
+[node name="Slot2" type="Button" parent="CenterBox"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Slot 2"
+
+[node name="Slot3" type="Button" parent="CenterBox"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Slot 3"
+
+[node name="LowerBox" type="HBoxContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -65.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Back" type="Button" parent="LowerBox"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "Back"
+
+[connection signal="pressed" from="CenterBox/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="CenterBox/Slot1" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="CenterBox/Slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="CenterBox/Slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="CenterBox/Slot2" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="CenterBox/Slot3" to="." method="_on_slot_3_pressed"]
+[connection signal="pressed" from="CenterBox/Slot3" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="LowerBox/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="LowerBox/Back" to="." method="_on_load_pressed"]

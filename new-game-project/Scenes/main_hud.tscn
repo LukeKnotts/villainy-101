@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnkcwq3irfxys"]
+
+[ext_resource type="Script" uid="uid://bq1qcv4gvcx1" path="res://Scripts/main_hud.gd" id="1_lk74q"]
+
+[node name="MainHUD" type="CanvasLayer"]
+script = ExtResource("1_lk74q")
+
+[node name="Quit" type="HBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Load" type="Button" parent="Quit"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "Quit"
+
+[node name="Label" type="Label" parent="Quit"]
+layout_mode = 2
+text = "SavedStuff"
+
+[connection signal="pressed" from="Quit/Load" to="." method="_on_load_pressed"]
