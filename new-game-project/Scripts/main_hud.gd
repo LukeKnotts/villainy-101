@@ -7,9 +7,9 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	var Menu = load("res://Scenes/world.tscn").instantiate()   
-	print(Menu.save_path1)
-	var file = FileAccess.open(Menu.save_path1, FileAccess.READ)
-	$Quit/Label.text = str(file.get_var(Menu.saveslot))
+	var file = FileAccess.open(Menu.main_path, FileAccess.READ)
+	print(file.get_file_as_string(Menu.saveslot))
+	$Quit/Label.text = str(file.get_file_as_string(Menu.saveslot))
 	
 func _on_load_pressed() -> void:
 	var Menu = load("res://Scenes/world.tscn").instantiate()   

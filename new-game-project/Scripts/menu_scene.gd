@@ -13,6 +13,7 @@ func load1():
 	saveslot = "Slot1"
 	var file = FileAccess.open(main_path, FileAccess.WRITE)
 	file.store_var(saveslot)
+	print(saveslot)
 		
 func load2():
 	saveslot = "Slot2"

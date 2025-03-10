@@ -6,7 +6,7 @@ var save_path2 = "user://saveslot2.save"
 var save_path3 = "user://saveslot3.save"
 var main_path = "user://mainpath.save"
 var saved = false
-var saveslot = "Save1"
+var saveslot = "Save2"
 
 
 func _ready() -> void:
@@ -48,4 +48,5 @@ func load3():
 func loadmain():
 	if FileAccess.file_exists(main_path):
 		var file = FileAccess.open(main_path, FileAccess.READ)
-		saveslot = file.get_var(saveslot)
+		saveslot = file.get_file_as_string(saveslot)
+		print("%s epic" % saveslot)
