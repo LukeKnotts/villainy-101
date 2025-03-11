@@ -1,10 +1,11 @@
 extends CharacterBody2D
-var speed = 300
+var speed = 10000
 func _physics_process(_delta: float) -> void:
 	var h_direction = Input.get_axis("move_left", "move_right") #if input is left return -1 else return 1
 	var v_direction = Input.get_axis("move_up", "move_down") #if input is up return 1 else return -1
-	velocity.y = speed*v_direction
-	velocity.x = speed*h_direction
+	velocity.y = speed*v_direction*get_process_delta_time()
+	velocity.x = speed*h_direction*get_process_delta_time()
+
 	##Saving Position
 	var World = load("res://Scenes/world.tscn").instantiate() #gets the world scene
 	var save = FileAccess.open(World.main_path, FileAccess.READ)
