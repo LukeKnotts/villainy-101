@@ -6,6 +6,7 @@
 script = ExtResource("1_1rerr")
 
 [node name="CenterBox" type="HBoxContainer" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -19,30 +20,23 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Load" type="Button" parent="CenterBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 41
-text = "Load"
-
 [node name="Slot1" type="Button" parent="CenterBox"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Slot 1"
 
 [node name="Slot2" type="Button" parent="CenterBox"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Slot 2"
 
 [node name="Slot3" type="Button" parent="CenterBox"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
 text = "Slot 3"
 
 [node name="LowerBox" type="HBoxContainer" parent="."]
+visible = false
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -54,12 +48,37 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="Back" type="Button" parent="LowerBox"]
-visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 41
 text = "Back"
 
-[connection signal="pressed" from="CenterBox/Load" to="." method="_on_load_pressed"]
+[node name="MainBox" type="VBoxContainer" parent="."]
+offset_left = 405.0
+offset_top = 176.0
+offset_right = 755.0
+offset_bottom = 496.0
+theme_override_constants/separation = 20
+
+[node name="Load" type="Button" parent="MainBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "Load"
+
+[node name="NewGameButton" type="Button" parent="MainBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "New Game"
+
+[node name="ScoresButton" type="Button" parent="MainBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "High Scores"
+
+[node name="QuitButton" type="Button" parent="MainBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 41
+text = "Quit"
+
 [connection signal="pressed" from="CenterBox/Slot1" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="CenterBox/Slot1" to="." method="_on_slot_1_pressed"]
 [connection signal="pressed" from="CenterBox/Slot2" to="." method="_on_load_pressed"]
@@ -68,3 +87,6 @@ text = "Back"
 [connection signal="pressed" from="CenterBox/Slot3" to="." method="_on_slot_3_pressed"]
 [connection signal="pressed" from="LowerBox/Back" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="LowerBox/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MainBox/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MainBox/NewGameButton" to="." method="NewGamePressed"]
+[connection signal="pressed" from="MainBox/QuitButton" to="." method="QuitPressed"]
