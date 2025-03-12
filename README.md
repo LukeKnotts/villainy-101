@@ -6,8 +6,10 @@ https://app.clickup.com/9013704574/v/dc/8cm4dvy-313
 
 Make sure you accept the project invite on ClickUp!
 
-You can also use the Kanban set up on the ClickUp page, but there isn't really anything on it right now.
+You can also use the Kanban set up on the ClickUp page, but its pretty disorganized, and the "Roadmap" page on the ClickUp seems better.
 
+## Day 3 progress
+Check out the "Day Summary" page on the CLickUp. We also made a Style Guide page, so give that a look over too.
 
-Day 2 progress
+## Day 2 progress
 I started working on the robot builder area, its under the robot_builder scene, the code is located in button.gd and texture_rect.gd.  The code makes a grid of TextureRects with a default canvas texture, there is also a dragable button with code that can be reused for a texture button to show what objects yor useing to build.  On release the button will go back to where it was placed at, there needs to be code created to check if on release its on the grid and if so place the object.  Note none of the things I have done today where put in the main control flow, you have to run the scene itself not the default scene.  
