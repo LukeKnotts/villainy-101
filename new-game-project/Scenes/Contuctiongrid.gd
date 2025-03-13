@@ -47,7 +47,6 @@ func AddToGrid(tile: Vector2i):
 		buildPart.frame = partData.Frame
 		buildPart.speed_scale = 0
 	else:
-		print("added alternate?")
 		buildPart.animation = partData.SeperateAnimation
 		buildPart.speed_scale = 1
 		buildPart.play(partData.SeperateAnimation)
