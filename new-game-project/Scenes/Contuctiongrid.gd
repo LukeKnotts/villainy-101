@@ -4,8 +4,11 @@ var GridSize = 12
 var GridMinimum = Vector2(6, 2)
 var GridMaximum = Vector2(17, 13)
 
+var deltaCounter = 0
+
 var grid = []
-var selectedParts = GlobalClass.RobotParts.WoodenFrame
+var selectedPart = GlobalClass.RobotParts.WoodenFrame
+var displayPart: AnimatedSprite2D
 
 var buildPartBase = preload("res://Scenes/RobotParts/BuildPartBase.tscn")
 
@@ -23,16 +26,59 @@ func prepareGrid():
 	return emptyGrid
 	
 
+## Adds the Sprite to the Grid with the necessary data
 func AddToGrid(tile: Vector2i):
 	var buildPart: AnimatedSprite2D = buildPartBase.instantiate()
-	grid[tile.x][tile.y] = buildPart
+	var partData = GlobalClass.RobotData[selectedPart]
+	
+	RemoveFromGrid(tile)
+	
+	grid[tile.x-7][tile.y-2] = {
+		PartSprite = buildPart,
+		PartData = partData,
+		PartTile = tile
+	}
 	
 	get_tree().root.add_child(buildPart)
-	buildPart.position = Vector2(101 + (tile.x * 16), 32 + (tile.y * 16))
+	buildPart.position = Vector2((tile.x * 16) + 13, (tile.y * 16) + 8)
 	
+	if (partData.SeperateAnimation == "None"):
+		buildPart.animation = partData.Animation
+		buildPart.frame = partData.Frame
+		buildPart.speed_scale = 0
+	else:
+		buildPart.animation = partData.SeperateAnimation
+		buildPart.speed_scale = 1
+		buildPart.play(partData.SeperateAnimation)
+
+func RemoveFromGrid(tile: Vector2i):
+	var foundPart = grid[tile.x-7][tile.y-2]
+	if (foundPart == null): return
+	if (foundPart.PartSprite):
+		foundPart.PartSprite.free()
+		grid[tile.x-7][tile.y-2] = null
+
+func UpdateDisplayPart():
+	var foundPart = GlobalClass.RobotData[selectedPart]
+	displayPart.animation = foundPart.Animation
+	displayPart.frame = foundPart.Frame
+	displayPart.speed_scale = 0
 
 func _ready() -> void:
+	displayPart = buildPartBase.instantiate()
 	grid = prepareGrid()
+	UpdateDisplayPart()
+	
+	get_tree().root.call_deferred("add_child", displayPart)
+	
+	displayPart.position = Vector2(384, 118)
+
+func _process(delta: float) -> void:
+	deltaCounter += delta
+	if (displayPart == null): 
+		print("Strange error") 
+		return
+	displayPart.position = Vector2(384, 118 + round(sin(deltaCounter * 0.8) * 5))
 
 func tileInBounds(tile: Vector2):
 	return not (
@@ -46,9 +92,17 @@ func _input(event):
 	if Input.is_action_just_pressed("Leftclick"):
 		var tile = local_to_map(get_global_mouse_position())
 		if not (tileInBounds(tile)): return
-		grid[tile.x][tile.y] = {}
+		AddToGrid(tile)
 		
 	if Input.is_action_just_pressed("RightClick"):
 		var tile = local_to_map(get_global_mouse_position())	
 		if not (tileInBounds(tile)): return
-		grid[tile.x][tile.y] = null
+		RemoveFromGrid(tile)
+		
+	if Input.is_action_just_pressed("move_left"):
+		selectedPart = (selectedPart - 1) % GlobalClass.RobotParts.values().size()
+		UpdateDisplayPart()
+		
+	if Input.is_action_just_pressed("move_right"):
+		selectedPart = (selectedPart + 1) % GlobalClass.RobotParts.values().size()
+		UpdateDisplayPart()

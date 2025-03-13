@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://o3jaky8jwa37"]
+[gd_scene load_steps=11 format=4 uid="uid://o3jaky8jwa37"]
 
 [ext_resource type="Texture2D" uid="uid://c77w1r8gp7yqf" path="res://assets/RobotParts.png" id="1_v4alp"]
 [ext_resource type="Texture2D" uid="uid://bwv01qqpgaxso" path="res://assets/GridBlock.png" id="2_oqrwh"]
+[ext_resource type="Texture2D" uid="uid://cxmlybhrc1bpa" path="res://assets/Arrows.png" id="4_7cvxg"]
 [ext_resource type="Script" uid="uid://dvf1cka56a4l7" path="res://Scenes/Contuctiongrid.gd" id="4_oqrwh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cvxg"]
@@ -39,11 +40,38 @@ texture = ExtResource("2_oqrwh")
 sources/7 = SubResource("TileSetAtlasSource_h6c1b")
 sources/0 = SubResource("TileSetAtlasSource_7cvxg")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6c1b"]
+atlas = ExtResource("4_7cvxg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwxxr"]
+atlas = ExtResource("4_7cvxg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vko78"]
+animations = [{
+"frames": [{
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_h6c1b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwxxr")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="RobotBuilder" type="Node2D"]
 texture_filter = 1
 
 [node name="Node2D2" type="Node2D" parent="."]
-position = Vector2(101, 32)
+position = Vector2(384, 118)
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -60,3 +88,12 @@ script = ExtResource("4_oqrwh")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(232, 129)
 zoom = Vector2(2.5, 2.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(341, 110)
+sprite_frames = SubResource("SpriteFrames_vko78")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(427, 111)
+sprite_frames = SubResource("SpriteFrames_vko78")
+animation = &"new_animation"

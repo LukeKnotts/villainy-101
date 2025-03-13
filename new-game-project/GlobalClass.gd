@@ -14,7 +14,8 @@ func MakeData(animation: String, frame: int, title: String, seperateAnimation: S
 	return {
 		Animation = animation,
 		Frame = frame,
-		Title = title
+		Title = title,
+		SeperateAnimation = seperateAnimation
 	}
 	
 
