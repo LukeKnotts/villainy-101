@@ -5,6 +5,9 @@ var GridMinimum = Vector2(6, 2)
 var GridMaximum = Vector2(17, 13)
 
 var grid = []
+var selectedParts = GlobalClass.RobotParts.WoodenFrame
+
+var buildPartBase = preload("res://Scenes/RobotParts/BuildPartBase.tscn")
 
 ## Generates a 12x12 Grid of purly null
 func prepareGrid():
@@ -21,8 +24,11 @@ func prepareGrid():
 	
 
 func AddToGrid(tile: Vector2i):
-	pass
-	# grid[tile.x][tile.y] = 
+	var buildPart: AnimatedSprite2D = buildPartBase.instantiate()
+	grid[tile.x][tile.y] = buildPart
+	
+	get_tree().root.add_child(buildPart)
+	buildPart.position = Vector2(101 + (tile.x * 16), 32 + (tile.y * 16))
 	
 
 func _ready() -> void:
