@@ -1,11 +1,8 @@
 extends TileMapLayer
-#needs Gridsize to work, set it to 12 beucse that is the work area
-#All of this works only in Contruction code grid
-#Conruction Area does not have code and just shows were the player can place stuff down
+
 var GridSize = 12
 var GridMinimum = Vector2(6, 2)
 var GridMaximum = Vector2(17, 13)
-#Set tile and code will be decribed in documentation, pls read.
 
 var grid = []
 
@@ -21,6 +18,12 @@ func prepareGrid():
 			emptyGrid[i] = emptyGrid[0].duplicate()
 			
 	return emptyGrid
+	
+
+func AddToGrid(tile: Vector2i):
+	pass
+	# grid[tile.x][tile.y] = 
+	
 
 func _ready() -> void:
 	grid = prepareGrid()
@@ -38,10 +41,8 @@ func _input(event):
 		var tile = local_to_map(get_global_mouse_position())
 		if not (tileInBounds(tile)): return
 		grid[tile.x][tile.y] = {}
-		print(grid)
 		
 	if Input.is_action_just_pressed("RightClick"):
 		var tile = local_to_map(get_global_mouse_position())	
 		if not (tileInBounds(tile)): return
 		grid[tile.x][tile.y] = null
-		print(grid)
