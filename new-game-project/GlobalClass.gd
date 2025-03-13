@@ -3,20 +3,16 @@ extends Node
 enum RobotParts {
 	Cannon = 0,
 	UpgradedCannon = 1,
-	
 	WoodenFrame = 2,
 	MetalFrame = 3,
 	ArmoredFrame = 4,
-	
-	Head = 5,
-	Mortar = 6,
-	
-	Saw = 7
+	Mortar = 5,
+	Saw = 6
 }
 
-func MakeData(index: String, frame: int, title: String):
+func MakeData(animation: String, frame: int, title: String, seperateAnimation: String = "None"):
 	return {
-		Asset = Assets[index],
+		Animation = animation,
 		Frame = frame,
 		Title = title
 	}
@@ -36,7 +32,6 @@ var RobotData = [
 	MakeData("Frames", 0, "Wooden Frame"),
 	MakeData("Frames", 1, "Metal Frame"),
 	MakeData("Frames", 2, "ArmoredFrames"),
-	MakeData("Head", 0, "Head"),
 	MakeData("Mortar", 0, "Mortar"),
-	MakeData("Saw", 0, "Saw")
+	MakeData("Saw", 0, "Saw", "SawMoving")
 ]
