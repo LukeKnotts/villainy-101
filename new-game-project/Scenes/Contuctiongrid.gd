@@ -16,7 +16,6 @@ func tileInBounds(tile: Vector2):
 	)
 
 func _input(event):
-
 	if Input.is_action_just_pressed("Leftclick"):
 		var tile = local_to_map(get_global_mouse_position())
 		if not (tileInBounds(tile)): return
@@ -26,3 +25,4 @@ func _input(event):
 		var tile = local_to_map(get_global_mouse_position())	
 		if not (tileInBounds(tile)): return
 		erase_cell(tile)
+		
