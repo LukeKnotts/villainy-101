@@ -1,0 +1,72 @@
+[gd_scene load_steps=14 format=3 uid="uid://dnq254sk5jhry"]
+
+[ext_resource type="Texture2D" uid="uid://pnaj7hkvdluj" path="res://assets/Head.png" id="1_5yhv3"]
+[ext_resource type="Script" uid="uid://b0j4n8a3eqibq" path="res://Scripts/RobotScripts/construction_part.gd" id="1_8jfyi"]
+[ext_resource type="Texture2D" uid="uid://bktcmrybwghes" path="res://assets/Frames.png" id="1_8nu1t"]
+[ext_resource type="Texture2D" uid="uid://0jwawtie1jua" path="res://assets/Cannons.png" id="3_g1xw3"]
+[ext_resource type="Texture2D" uid="uid://dpc7e8ksicd6p" path="res://assets/Mortar.png" id="4_rorij"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogfbo"]
+atlas = ExtResource("1_5yhv3")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwlvp"]
+atlas = ExtResource("1_8nu1t")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtdix"]
+atlas = ExtResource("1_8nu1t")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5yhv3"]
+atlas = ExtResource("1_8nu1t")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nojpw"]
+atlas = ExtResource("3_g1xw3")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jthb0"]
+atlas = ExtResource("3_g1xw3")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kdt5"]
+atlas = ExtResource("4_rorij")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g1xw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogfbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwlvp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtdix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5yhv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nojpw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jthb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kdt5")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PartSprite" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g1xw3")
+script = ExtResource("1_8jfyi")
+part = null
+
+[node name="Area2D" type="Area2D" parent="."]
