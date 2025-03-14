@@ -1,11 +1,11 @@
 [gd_scene load_steps=42 format=3 uid="uid://puv8jaelhfe1"]
 
-[ext_resource type="Texture2D" uid="uid://4ogtf3jjtutv" path="res://assets/Cannons.png" id="1_xpgnu"]
-[ext_resource type="Texture2D" uid="uid://daql8gbdkgje6" path="res://assets/Frames.png" id="2_g1743"]
-[ext_resource type="Texture2D" uid="uid://cxnxuh2ya7a3m" path="res://assets/Saw.png" id="3_efmji"]
-[ext_resource type="Texture2D" uid="uid://y0mbhvm11ml8" path="res://assets/Mortar.png" id="3_l2d5h"]
-[ext_resource type="Texture2D" uid="uid://bknxv0j303c61" path="res://assets/Thrusters.png" id="4_5xh6o"]
-[ext_resource type="Texture2D" uid="uid://qjehry1xsa1b" path="res://assets/Wheels.png" id="5_7c2i4"]
+[ext_resource type="Texture2D" uid="uid://dlxtwhdng8vrq" path="res://assets/Cannons.png" id="1_xpgnu"]
+[ext_resource type="Texture2D" uid="uid://b2umtpajo76mg" path="res://assets/Frames.png" id="2_g1743"]
+[ext_resource type="Texture2D" uid="uid://cjf6b5log3rlu" path="res://assets/Saw.png" id="3_efmji"]
+[ext_resource type="Texture2D" uid="uid://dy7xtcsyips44" path="res://assets/Mortar.png" id="3_l2d5h"]
+[ext_resource type="Texture2D" uid="uid://cjksb0wjnvu1y" path="res://assets/Thrusters.png" id="4_5xh6o"]
+[ext_resource type="Texture2D" uid="uid://ck62wc6jqm17r" path="res://assets/Wheels.png" id="5_7c2i4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1743"]
 atlas = ExtResource("1_xpgnu")

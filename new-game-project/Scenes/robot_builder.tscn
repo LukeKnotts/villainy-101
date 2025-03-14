@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c77w1r8gp7yqf" path="res://assets/RobotParts.png" id="1_v4alp"]
 [ext_resource type="Texture2D" uid="uid://bwv01qqpgaxso" path="res://assets/GridBlock.png" id="2_oqrwh"]
-[ext_resource type="Texture2D" uid="uid://cxmlybhrc1bpa" path="res://assets/Arrows.png" id="4_7cvxg"]
+[ext_resource type="Texture2D" uid="uid://x6mxs6xikga7" path="res://assets/Arrows.png" id="4_7cvxg"]
 [ext_resource type="Script" uid="uid://dvf1cka56a4l7" path="res://Scenes/Contuctiongrid.gd" id="4_oqrwh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7cvxg"]
