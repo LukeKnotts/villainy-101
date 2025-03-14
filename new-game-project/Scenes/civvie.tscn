@@ -1,0 +1,112 @@
+[gd_scene load_steps=15 format=3 uid="uid://dphavaa37weuf"]
+
+[ext_resource type="Texture2D" uid="uid://m0wbnr8lmvc5" path="res://assets/Civilians.png" id="1_c0jxl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsn4f"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7qln"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjood"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bic0h"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8xyo"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou7qv"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6dsw"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jccd2"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbexc"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awp5v"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1csv"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_380m2"]
+atlas = ExtResource("1_c0jxl")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iw4dw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsn4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7qln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjood")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bic0h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8xyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ou7qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6dsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jccd2")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbexc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awp5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1csv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_380m2")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[node name="Civvie" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_iw4dw")
+animation = &"new_animation_1"
+frame_progress = 0.141959

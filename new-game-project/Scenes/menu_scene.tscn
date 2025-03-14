@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhq8gljsgn267"]
+[gd_scene load_steps=4 format=3 uid="uid://bhq8gljsgn267"]
 
 [ext_resource type="PackedScene" uid="uid://s2uxi71u65kb" path="res://Scenes/menu.tscn" id="1_1opiu"]
 [ext_resource type="Script" uid="uid://cpksj021y4lmy" path="res://Scripts/menu_scene.gd" id="1_kt0tg"]
+[ext_resource type="Texture2D" uid="uid://dph7gu2p8ntot" path="res://assets/StartScreen.png" id="3_s0fe0"]
 
 [node name="MenuScene" type="Node2D"]
 script = ExtResource("1_kt0tg")
 
 [node name="Menu" parent="." instance=ExtResource("1_1opiu")]
+
+[node name="StartScreen" type="Sprite2D" parent="."]
+position = Vector2(577.5, 321.5)
+scale = Vector2(2.40208, 2.41111)
+texture = ExtResource("3_s0fe0")
