@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c6d2477ox0io0" path="res://Scripts/world.gd" id="1_go701"]
 [ext_resource type="PackedScene" uid="uid://dnkcwq3irfxys" path="res://Scenes/main_hud.tscn" id="3_5a7ea"]
-[ext_resource type="Texture2D" uid="uid://b310a5f16lrv" path="res://assets/RoadTileset.png" id="3_8j60k"]
-[ext_resource type="Texture2D" uid="uid://byqp2s5wnsntv" path="res://assets/BuildingTiles.png" id="4_5ukr8"]
-[ext_resource type="Texture2D" uid="uid://cwlhi5alm0jiv" path="res://assets/GroundTile.png" id="5_o06y3"]
-[ext_resource type="Texture2D" uid="uid://m0wbnr8lmvc5" path="res://assets/Civilians.png" id="6_k7acu"]
+[ext_resource type="Texture2D" uid="uid://by2c8jhxjjwc2" path="res://assets/RoadTileset.png" id="3_8j60k"]
+[ext_resource type="Texture2D" uid="uid://b6kv1tl8dhfbc" path="res://assets/BuildingTiles.png" id="4_5ukr8"]
+[ext_resource type="Texture2D" uid="uid://ktb33viye1vh" path="res://assets/GroundTile.png" id="5_o06y3"]
+[ext_resource type="Texture2D" uid="uid://xsq52427072r" path="res://assets/Civilians.png" id="6_k7acu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fo5ed"]
 texture = ExtResource("3_8j60k")
