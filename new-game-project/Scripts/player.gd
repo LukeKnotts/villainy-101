@@ -1,5 +1,7 @@
 extends CharacterBody2D
 var speed = 10000
+const bulletPath = preload('res://bullet.tscn')
+
 func _physics_process(_delta: float) -> void:
 	var h_direction = Input.get_axis("move_left", "move_right") #if input is left return -1 else return 1
 	var v_direction = Input.get_axis("move_up", "move_down") #if input is up return 1 else return -1
@@ -20,3 +22,20 @@ func _physics_process(_delta: float) -> void:
 		World.save_data["pos"] = position
 		World.save3()
 	move_and_slide()
+
+func _process(delta):
+	if Input.is_action_just_pressed("Leftclick"):
+		shoot()
+		
+		$Node2D.look_at(get_global_mouse_position())
+
+func shoot():
+	var bullet = bulletPath.instantiate()
+	get_parent().add_child(bullet)
+	bullet.position = $Node2D/Marker2D.global_position
+	
+	bullet.bulletvelocity = get_global_mouse_position() - bullet.position
+	bullet.visible = false
+	await get_tree().create_timer(0.1).timeout
+	bullet.visible = true 
+	bullet.collision_layer = true
